@@ -51,7 +51,7 @@ namespace qvp.Screens
             _playerP = new CowboyPlayer(new Vector2(975, 800), _content.Load<Texture2D>("p_cowboy_idle"), _content.Load<Texture2D>("p_cowboy_shoot"), _content.Load<Texture2D>("p_cowboy_explosion"), _content.Load<Texture2D>("q_dart"), _content.Load<SoundEffect>("explosion"), _content.Load<SoundEffect>("explosion2"));
 
             Random random = new Random();
-            _drawTimer = random.Next(4, 10);
+            _drawTimer = random.Next(3, 6);
         }
 
         public override void Deactivate()

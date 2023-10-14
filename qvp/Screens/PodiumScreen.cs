@@ -21,6 +21,7 @@ namespace qvp.Screens
         private Texture2D _pCele;
         private Texture2D _qSad;
         private Texture2D _pSad;
+        private Texture2D _text;
 
         InputAction _q;
         InputAction _p;
@@ -55,6 +56,7 @@ namespace qvp.Screens
             _pCele = _content.Load<Texture2D>("p_cele");
             _qSad = _content.Load<Texture2D>("q_sad");
             _pSad = _content.Load<Texture2D>("p_sad");
+            _text = _content.Load<Texture2D>("podium_text");
 
             _qEmoteSound = _content.Load<SoundEffect>("jump (1)");
             _pEmoteSound = _content.Load<SoundEffect>("jump (4)");
@@ -111,6 +113,7 @@ namespace qvp.Screens
 
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.NonPremultiplied, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone);
             spriteBatch.Draw(_background, new Vector2(960, 960), new Rectangle(0, 0, 64, 64), Color.White, 0, new Vector2(64, 64), 15.0f, SpriteEffects.None, 0);
+            spriteBatch.Draw(_text, new Vector2(960, 960), new Rectangle(ScreenManager.QPoints > ScreenManager.PPoints ? 0 : 64, 0, 64, 64), Color.White, 0, new Vector2(64, 64), 15.0f, SpriteEffects.None, 0);
             spriteBatch.Draw(_podium, new Vector2(960, 960), new Rectangle(ScreenManager.QPoints > ScreenManager.PPoints ? 0 : 64, 0, 64, 64), Color.White, 0, new Vector2(64, 64), 15.0f, SpriteEffects.None, 0);
             spriteBatch.Draw(ScreenManager.QPoints > ScreenManager.PPoints ? _qCele : _qSad, new Vector2(627, ScreenManager.QPoints > ScreenManager.PPoints ? 482 : 722), new Rectangle(_qEmote ? 32 : 0, 0, 32, 32), Color.White, 0, new Vector2(32, 32), 15.0f, SpriteEffects.None, 0);
             spriteBatch.Draw(ScreenManager.PPoints > ScreenManager.QPoints ? _pCele : _pSad, new Vector2(850, ScreenManager.QPoints < ScreenManager.PPoints ? 482 : 722), new Rectangle(_pEmote ? 32 : 0, 0, 32, 32), Color.White, 0, new Vector2(32, 32), 15.0f, SpriteEffects.None, 0);

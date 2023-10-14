@@ -142,7 +142,8 @@ namespace qvp.Screens
         private void PlayGameMenuEntrySelected(object sender, PlayerIndexEventArgs e)
         {
 
-            List<GameScreen> games = new List<GameScreen> { new StandoffGameScreen(), new SpaceGameScreen(), new TrackGameScreen() };
+            List<GameScreen> games = new List<GameScreen> { new StandoffGameScreen(), new SpaceGameScreen(), new TrackGameScreen(), new BoxingScreen(), new StaringScreen(), new BalloonGameScreen(), new DartsScreen(), new BombGameScreen() };
+            // List<GameScreen> games = new List<GameScreen> { new BalloonGameScreen() };
             Random random = new Random();
 
             for (int i = games.Count - 1; i > 0; i--)

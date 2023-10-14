@@ -171,7 +171,7 @@ namespace qvp.StateManagement
 
         public void RemoveScreen(GameScreen screen)
         {
-            // If we have a graphics device, tell the screen to unload its content 
+            // If we have a graphics device, tell the screen to unload its content
             if (_isInitialized) screen.Unload();
 
             _screens.Remove(screen);

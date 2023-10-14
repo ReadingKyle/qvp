@@ -81,7 +81,7 @@ namespace qvp.Players
                     }
                     shootAnimationTimer -= 0.05;
                 }
-                spriteBatch.Draw(_shootTexture, _position, new Rectangle(shootAnimationFrame * 32, 0, 32, 32), Color.White, 0, new Vector2(32, 32), 10.0f, SpriteEffects.None, 0);
+                spriteBatch.Draw(_shootTexture, _position, new Rectangle(shootAnimationFrame * 32, 0, 32, 32), IsDead ? Color.Red : Color.White, 0, new Vector2(32, 32), 10.0f, SpriteEffects.None, 0);
             }
             else
             {
@@ -92,7 +92,7 @@ namespace qvp.Players
                     if (idleAnimationFrame > 3) idleAnimationFrame = 0;
                     idleAnimationTimer -= 0.5;
                 }
-                spriteBatch.Draw(_idleTexture, _position, new Rectangle(idleAnimationFrame * 32, 0, 32, 32), Color.White, 0, new Vector2(32, 32), 10.0f, SpriteEffects.None, 0);
+                spriteBatch.Draw(_idleTexture, _position, new Rectangle(idleAnimationFrame * 32, 0, 32, 32), IsDead ? Color.Red : Color.White, 0, new Vector2(32, 32), 10.0f, SpriteEffects.None, 0);
             }
             if (IsDead && !IsSploded)
             {

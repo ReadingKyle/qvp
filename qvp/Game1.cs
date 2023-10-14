@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using ParticleSystemExample;
 using qvp.Screens;
 using qvp.StateManagement;
 
@@ -11,7 +12,8 @@ namespace qvp
     {
         private GraphicsDeviceManager _graphics;
         private readonly ScreenManager _screenManager;
-        
+        MouseState _priorMouse;
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
